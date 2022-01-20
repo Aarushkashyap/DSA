@@ -2,7 +2,6 @@
 #include<vector>
 using namespace std;
 void linearSearchRecursive(vector<int> vrr, int n, int key){
-
     if(n<0){
         cout<<"key not found";
         return;
@@ -11,9 +10,7 @@ void linearSearchRecursive(vector<int> vrr, int n, int key){
         cout<<"Key found at: "<<n;
         return;
     }
-    else{
-        linearSearchRecursive(vrr, n-1, key);
-    }
+    linearSearchRecursive(vrr, n-1, key);
 }
 int main(){
     int n,i,temp,key;
@@ -24,6 +21,6 @@ int main(){
         vrr.push_back(temp);
     }
     cin>>key;
-    linearSearchRecursive(vrr, n, key);
+    linearSearchRecursive(vrr, n-1, key);
     return 0;
 }

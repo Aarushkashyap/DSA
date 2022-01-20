@@ -4,7 +4,7 @@ using namespace std;
 void binarySearch(vector<int> vrr, int ll, int ul, int key)
 {
     int i,mid;
-    for(i=0;i<vrr.size();i++){
+    while(ul>=ll){
         mid = (ul+ll)/2;
         if(vrr[mid]==key){
             cout<<"Key found at: "<<mid;

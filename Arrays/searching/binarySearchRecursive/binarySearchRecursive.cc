@@ -1,10 +1,10 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void binarySearchRecursive(vector<int> vrr, int ul, int ll, int key,int n){
+void binarySearchRecursive(vector<int> vrr, int ul, int ll, int key){
     int mid;
     mid=(ul+ll)/2;
-    if(n<0){
+    if(ul<ll){
         cout<<"Key not found";
         return;
     }
@@ -12,11 +12,11 @@ void binarySearchRecursive(vector<int> vrr, int ul, int ll, int key,int n){
         cout<<"Key found at: "<<mid;
         return;
     }
-    else if(vrr[mid]>key){
-        binarySearchRecursive(vrr,mid-1,ll,key,n-1);
+    if(vrr[mid]>key){
+        binarySearchRecursive(vrr,mid-1,ll,key);
     }
     else{
-        binarySearchRecursive(vrr, ul, mid+1, key,n-1);
+        binarySearchRecursive(vrr, ul, mid+1, key);
     }
 }
 int main(){
@@ -28,6 +28,6 @@ int main(){
         vrr.push_back(temp);
     }
     cin>>key;
-    binarySearchRecursive(vrr,n-1,0,key,n);
+    binarySearchRecursive(vrr,n-1,0,key);
     return 0;
 }
