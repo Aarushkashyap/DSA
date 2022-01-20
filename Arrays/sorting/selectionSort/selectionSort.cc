@@ -1,21 +1,23 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void bubbleSort(vector<int> vrr, int n){
-    int temp,i;
+void selectionSort(vector<int> vrr, int n){
+    int min,i,j,temp;
     for(i=0;i<n-1;i++){
-        for(int j=0;j<n-1-i;j++){
-            if(vrr[j]>vrr[j+1]){
-                temp = vrr[j];
-                vrr[j]=vrr[j+1];
-                vrr[j+1]=temp;
+        min= i;
+        for(j=i+1;j<n;j++){
+            if(vrr[j]<vrr[min]){
+                min = j;
             }
+            temp=vrr[min];
+            vrr[min]=vrr[i];
+            vrr[i]=temp;
         }
     }
     for(i=0;i<n;i++){
         cout<<vrr[i]<<" ";
     }
-    return ;
+    return;
 }
 int main(){
     int n,i,temp;
@@ -25,6 +27,6 @@ int main(){
         cin>>temp;
         vrr.push_back(temp);
     }
-    bubbleSort(vrr,n);
+    selectionSort(vrr, n);
     return 0;
 }
