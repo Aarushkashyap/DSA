@@ -9,6 +9,8 @@ void selectionSort(vector<int> vrr, int n){
             if(vrr[j]<vrr[min]){
                 min = j;
             }
+        }
+        if(min!=i){
             temp=vrr[min];
             vrr[min]=vrr[i];
             vrr[i]=temp;
